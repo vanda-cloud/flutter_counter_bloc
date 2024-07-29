@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 
 /// {@template counter_observer}
 /// [BlocObserver] for the counter application which

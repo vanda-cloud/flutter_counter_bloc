@@ -14,6 +14,10 @@ class CounterView extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Counter Cubit'),
+        centerTitle: true,
+      ),
       body: Center(
         child: BlocBuilder<CounterCubit, int>(
           builder: (context, state) {
@@ -32,10 +36,11 @@ class CounterView extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           FloatingActionButton(
-            key: const Key('counterView_decrement_floatingActionButton'),
-            child: const Icon(Icons.remove),
-            onPressed: () => context.read<CounterCubit>().decrement(),
-          ),
+              key: const Key('counterView_decrement_floatingActionButton'),
+              child: const Icon(Icons.remove),
+              onPressed: () {
+                context.read<CounterCubit>().decrement();
+              }),
         ],
       ),
     );
